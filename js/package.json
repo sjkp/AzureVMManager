@@ -1,0 +1,21 @@
+{
+  "name": "AzureVMManager",
+  "version": "0.0.1",
+  "description": "AzureVMManager",
+  "main": "app.js",
+  "author": {
+    "name": "Simon Pedersen",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "3.4.4",
+    "jade": "*",
+    "stylus": "*",
+	"azure-mgmt": "*",
+	"azure-publishsettings-parser": "*",
+	"azure-mgmt-compute": "*",
+	"azure": "*",
+	"underscore": "*",
+	"dotenv": "*"
+  }
+}

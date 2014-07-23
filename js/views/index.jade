@@ -1,0 +1,34 @@
+extends layout
+
+block content
+	#wrapper
+		h1= title
+		p AzureDeployment manager is a set of tools, built on top of the Microsoft Azure Management API that makes it easy to provision and deprovision Cloud Services. 
+		p The purpose of the project was to build a simple REST service that can be called from Azure Scheduling service that will deploy a cloud service.
+
+		h2 To get Started 
+		li run npm install to get all the packages
+		li create an ".env" file (for environment variables) in the root of application, and added the following two lines:
+			div AZURE_STORAGE_ACCOUNT=[NAME_OF_STORAGEACCOUNT] 
+			div AZURE_STORAGE_ACCESS_KEY=[STORAGE_ACCOUNT_KEY]
+		li get your subscription certificate by running "azure account cert export" from a command line with the node azure-cli tools installed. If you havn't downloaded and setup your subscription you have to do the following first
+		li npm install azure-cli -g
+		li azure account download (download the subscription file)
+		li azure account import [path_to_subscription]
+	
+		p In your storage account, in the blob storage you have to create a container "deployments" in this folder you must upload the *.cscfg and *.cspkg file of your cloud service. Also be sure to change the code in route\cloudservice.js to reflect the name of your cloudservice and subscription file.
+
+		h2 REST endpoints
+		h3 List deployment if anything deployed
+		|https://[server]/cloudservice/[CloudServiceName]/
+	
+		h3 Delete deployment
+		|https://[server]/cloudservice/[CloudServiceName]/delete
+
+		h3 Start deployment
+		|https://[server]/cloudservice/[CloudServiceName]/deploy
+
+		h2 Contact 
+		Contact me at mail@sjkp.dk
+
+		div /Simon J.K. Pedersen

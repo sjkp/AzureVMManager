@@ -1,0 +1,36 @@
+﻿<h1>AzureDeploymentManager</h1>
+
+<p>AzureDeployment manager is a set of tools, built on top of the Microsoft Azure Management API that makes it easy to provision and deprovision Cloud Services. </p>
+
+<p>The purpose of the project was to build a simple REST service that can be called from Azure Scheduling service that will deploy a cloud service.</p>
+
+<h1>To get Started</h1>
+
+<ul>
+<li>run npm install to get all the packages</li>
+<li>create an ".env" file (for environment variables) in the root of application, and added the following two lines<br/>
+AZURE_STORAGE_ACCOUNT=[NAME_OF_STORAGEACCOUNT]<br/>
+AZURE_STORAGE_ACCESS_KEY=[STORAGE_ACCOUNT_KEY]</li>
+<li>get your subscription certificate by running "azure account cert export" from a command line with the node azure-cli tools installed. If you havn't downloaded and setup your subscription you have to do the following first</li>
+<li>npm install azure-cli -g</li>
+<li>azure account download (download the subscription file)</li>
+<li>azure account import [path_to_subscription]</li>
+</ul>
+
+<p>In your storage account, in the blob storage you have to create a container "deployments" in this folder you must upload the *.cscfg and *.cspkg file of your cloud service. <br/>
+Also be sure to change the code in route\cloudservice.js to reflect the name of your cloudservice and subscription file.</p>
+
+<h1>REST endpoints</h1>
+
+<p>List deployment if anything deployed<br/>
+<a href="https://[server]/cloudservice/[CloudServiceName]/">https://[server]/cloudservice/[CloudServiceName]/</a></p>
+
+<p>Delete deployment<br/>
+<a href="https://[server]/cloudservice/[CloudServiceName]/delete">https://[server]/cloudservice/[CloudServiceName]/delete</a></p>
+
+<p>Start deployment<br/>
+<a href="https://[server]/cloudservice/[CloudServiceName]/deploy">https://[server]/cloudservice/[CloudServiceName]/deploy</a></p>
+
+<h1>Contact</h1>
+
+<p>Write me: mail@sjkp.dk</p>
